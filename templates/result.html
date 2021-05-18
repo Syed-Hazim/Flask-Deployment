@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Title</title>
+  
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand mx-auto" href="#">Project</a>
+  </nav>
+  <div class="section-container mt-4">
+    <section class="upload-container">
+     
+    </section>
+    <div class="upload-vector">
+        <!-- <div class="progress-bar progress-bar-striped active" style="width: 50%; margin: 50px; position: absolute; top: 500px;left: 350px;" id="progress">
+                <span class="progress-bar-label">{{ value }}</span>
+            </div>
+            <div class="container"></div>
+        </div> -->
+     
+      
+      <h4 class="progress-label-left">Fake</h4>
+      <h4 class="progress-label-right">Real</h4>
+      <div class="progress-50 progress-bar"  id="progress">
+        <span class="progress-bar-label">{{ value }}</span>
+    </div>
+      <!-- <div class="progress"  style="width: 50%;margin: 50px;  position: absolute; top: 500px;left: 350px; border-radius:10px;" aria-valuemin="0" aria-valuemax="100" id="progressbar"></div>
+        <span class="progress-bar-label">{{ value }}</span>  -->
+        <!-- <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+      </div> -->
+      </div>
+       <!-- <div class="progress" value="{{ value }}" max="100" id="progress_r">
+        <span class="progress-bar-label">{{ value }}</span> -->
+    </div> 
+    </div>
+    
+    </div>
+  </div>
+  <script>
+   
+  // var bar=document.getElementById("progress_r");
+  // val= {{ value}};
+  // console.log(val);
+  // if(val < 50){
+  //   bar.setAttribute("background-color","red");
+  // }
+  // else
+  // {
+  //   bar.setAttribute("background-color","green");
+   
+  // }
+  
+  //var bar=document.querySelector("#progress");
+  //bar.setAttribute("aria-valuenow",{{ value }});
+    var g = document.createElement("progress");
+    val={{ value }};
+    g.setAttribute("value", val);
+    console.log(val);
+    g.setAttribute("max", "100");
+    document.getElementById("progress").appendChild(g);
+  
+
+  </script>
+  <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
