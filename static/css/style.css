@@ -16,6 +16,20 @@ html {
   overflow: hidden;
 }
 
+.hidden{
+  display: none;
+}
+.loading {
+  top: 200 px;
+  margin: auto;
+  position: absolute;
+  z-index: 1000;
+  width: 160px;
+  height: 24px;
+  background: url(loadingimage.gif) no-repeat;
+  cursor: wait;
+  }
+  
 .section-container,
 .drop-zone,
 .upload-container {
@@ -49,7 +63,13 @@ html {
   height: 100px;
   position: relative;
 }
-
+.loading {
+  width: 35px;
+  height: 35px;
+  display: none;
+  background: url("../static/ajax-loader.gif") no-repeat;
+  cursor: wait;
+}
 .icon-container img {
   width: 75px;
   position: absolute;
@@ -95,14 +115,14 @@ html {
 .progress-label-left {
   float: left;
   position: absolute;
-  top:77%;
+  top:72%;
   left:22%;
   color: red;
 }
 .progress-label-right {
   float: right;
   position: absolute;
-  top: 77%;
+  top: 72%;
   left:77%;
   color:green;
 }
@@ -121,12 +141,15 @@ html {
 }
 .video-container {
   display: none;
-  height:auto;
-  width: auto;
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  top:30%;
+  left:40%;
 }
 .progress-bar-label{
   position: absolute;
-  top:550px;
+  top:545px;
   left:650px;
 }
 progress{
