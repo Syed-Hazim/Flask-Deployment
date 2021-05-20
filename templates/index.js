@@ -42,7 +42,7 @@ browseBtn.addEventListener('click', () => {
 });
 
 fileInput.addEventListener("change", () => {
-  //playSelectedFile();
+  playSelectedFile();
 });
 
 
