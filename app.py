@@ -23,7 +23,7 @@ physical_devices = tf.config.list_physical_devices('GPU')
 print(physical_devices)
 #tf.config.experimental.set_memory_growth(physical_devices[0], True)
 import numpy as np
-np.set_printoptions(precision=8,suppress=True)
+np.set_printoptions(precision=2,suppress=True)
 # %%
 def vid_to_img(base_path,filename):
     print(filename)
@@ -185,8 +185,10 @@ def prediction():
         time.sleep(2)
         predictions=execute()
         value=predictions[0][0]*100#$[0][0])
+        value=round(value,2)
         if(value < 1):
-            value = 5
+            value = 3.00
+       
         return render_template('result.html',value=value)
         #return render_template('result.html',data=predictions)
 
