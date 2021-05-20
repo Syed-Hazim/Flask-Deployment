@@ -173,14 +173,21 @@ def execute():
 
 # %% 
 import time
+from flaskthreads import AppContextThread
 @app.route('/')
 def index():
     img='static/file.svg'
     return render_template('index.html',img=img)
 
-@app.route('/prediction',methods=['GET','POST'])
+@app.route('/loading')
+def loading():
+    return render_template('loading.html')
+
+   
+
+@app.route('/loading/prediction',methods=['GET','POST'])
 def prediction():
-    if request.method=='GET':
+     if request.method=='GET':
         predictions=np.empty(1)
         time.sleep(2)
         predictions=execute()
@@ -188,11 +195,9 @@ def prediction():
         value=round(value,2)
         if(value < 1):
             value = 3.00
-       
         return render_template('result.html',value=value)
-        #return render_template('result.html',data=predictions)
+        
 
-    
 if __name__ == "__main__":
     app.run(debug=True)
     
